@@ -1,0 +1,37 @@
+
+<template name="sidebar">
+	{{> menu}}
+	{{>Surface template="main" class="main"
+		size="[undefined,undefined]" translate=menuTranslate}}
+</template>
+
+<template name="menu">
+	{{#SequentialLayout id="menu" class="blue-bg" size="[200,undefined]" translate="[0,35]"}}
+		{{>strip icon="search" text="Search"}}
+		{{>strip icon="star" text="Inbox"}}
+		{{>strip icon="group" text="Friends"}}
+		{{>strip icon="cog" text="Settings"}}
+	{{/SequentialLayout}}
+</template>
+
+<!-- Here we use a regular Meteor template to create a reusable "strip" -->
+<template name="strip">
+	{{#View size="[undefined,50]"}}
+
+		{{!-- Background and text --}}
+		{{#Surface class="strip" size="[undefined,50]"}}
+		<a href="/">{{text}}</a>
+		{{/Surface}}
+
+		{{!-- Icon (which is not rotated/skewed) --}}
+		{{#Surface class="icon" size="[30,30]" translate="[20,0]"}}
+			<i class="fa fa-{{icon}}"></i>
+		{{/Surface}}
+
+	{{/View}}
+</template>
+
+<template name="main">
+	<h1>Main App View</h1>
+	<p>Click me anywhere to see the menu effect (for now)</p>
+</template>

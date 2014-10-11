@@ -1,0 +1,44 @@
+<template name='at_grid'>
+  {{#RenderController target="reactivity" size="[undefined,undefined]"}}
+    {{>yield region='main'}}
+  {{/RenderController}}
+</template>
+
+<template name='reactivity'>
+  	{{#Scrollview size="[undefined,undefined]"}}
+		{{#Surface size="[undefined,80]" class="leftPad"}}
+			<h1>Reactivity</h1>
+
+			<p>Famous-views fully embraces the principle of Meteor reactivity,
+			bringing you all these benefits to Famous for rapid prototyping
+			and generally awesome code.</p>
+		{{/Surface}}
+
+    {{#Surface size="[undefined,130]" class="leftPad"}}
+      <h2>GridView</h2>
+
+      <p>Here's an example changing the number of columns based on
+      the screen size:</p>
+
+      {{>nameSliderValue name="width" value=sess.width label="Width:"
+        min="30" max="700" step="1"}}
+    {{/Surface}}
+
+    {{#View size=gridSize translate="[20,0]"}}
+      {{#GridLayout dimensions=gridDimensions}}
+        {{#Surface size="[undefined,undefined]" class="red-bg"}}{{/Surface}}
+        {{#Surface size="[undefined,undefined]" class="green-bg"}}{{/Surface}}
+        {{#Surface size="[undefined,undefined]" class="blue-bg"}}{{/Surface}}
+      {{/GridLayout}}
+    {{/View}}
+{{/Scrollview}}
+</template>
+
+<template name="nameSliderValue">
+  <div style="vertical-align: middle; width: 60px; display: inline-block; text-align: right">{{label}}</div>
+  <input type="range" name="{{name}}"
+    min="{{min}}" max="{{max}}" step="{{step}}" value="{{value}}"
+    style="width: 200px; display: inline-block; vertical-align: middle;">
+  <input type="text" name="{{name}}" size="2" value="{{value}}">
+  <br />
+</template>

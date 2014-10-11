@@ -1,0 +1,22 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+autopublish
+insecure
+gadicohen:famous-views
+iron:router
+splendido:accounts-templates-core
+accounts-base
+accounts-ui
+mizzao:bootstrap-3
+splendido:accounts-templates-bootstrap
+accounts-password
+accounts-facebook
+accounts-google
+mjn:famous
+natestrauser:font-awesome
+splendido:accounts-templates-famous-wrapper
+
